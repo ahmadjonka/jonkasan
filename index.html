@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FlexBox</title>
+  <style>
+    body {
+      background-color: #2e324b;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    .buttons button {
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      margin: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .images {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin: 30px 0;
+    }
+    .images img {
+      width: 300px;
+      height: auto;
+      border: 3px solid orangered;
+    }
+    .title {
+      background-color: black;
+      padding: 20px;
+      border-radius: 30px;
+      width: 200px;
+      margin: 0 auto;
+      font-size: 20px;
+    }
+    .descriptions {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 30px;
+    }
+    .desc-box {
+      background-color: red;
+      border-radius: 40px;
+      padding: 30px;
+      width: 300px;
+    }
+    .desc-box p {
+      background-color: lime;
+      color: black;
+      padding: 10px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="buttons">
+    <button>Display:flex;</button>
+    <button>Display:none;</button>
+    <button>Display:block;</button>
+    <button>Display:inline;</button>
+  </div>
+
+  <div class="images">
+    <img src="data:image/png;base64,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" alt="Flexbox image 1">
+    <img src="https://i.ytimg.com/vi/JJSoEo8JSnc/maxresdefault.jpg" alt="Flexbox video">
+  </div>
+
+  <div class="title">FlexBox</div>
+
+  <div class="descriptions">
+    <div class="desc-box">
+      <p>CSS Flexbox — это технология для создания сложных гибких макетов за счёт правильного размещения элементов на странице.</p>
+    </div>
+    <div class="desc-box">
+      <p>Flexbox, web-dizayn jarayonini sodda qiladi va elementlarni dinamik tarzda joylashuvini boshqarishga yordam beradi. Bu esa web sayt yoki ilovalarning yaratilishi va ularga moslashtirilishi jarayonini yengillashtiradi.</p>
+    </div>
+  </div>
+
+</body>
+</html>
